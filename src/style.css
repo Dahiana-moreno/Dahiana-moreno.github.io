@@ -7,13 +7,13 @@ body {
    
     background-image:  url("https://img.freepik.com/vector-premium/pago-estilo-plano-concepto-facturas-servicios-publicos-ilustracion-vectorial-facturas-servicios-publicos-ahorro-recursos_657802-78.jpg"); 
     }
-
+/*
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none; 
 
     }
-  
+ */ 
      /*QUITAR LAS FLECHAS DE NUMEROS*/
         
     header{

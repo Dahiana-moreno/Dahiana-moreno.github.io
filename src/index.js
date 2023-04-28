@@ -16,12 +16,20 @@ const cardCvc = document.querySelector("#card-cvc");
 iName.addEventListener("input",() => {
   cardName.innerText = iName.value;
 })
-
+//iNumber.addEventListener("input",(e) => {
 iNumber.addEventListener("input",() => {
-  cardNumber.innerText = iNumber.value;
+  cardNumber.innerText = iNumber.value
+    .slice(-4);
+
+  //ME PERMITE QUE EN EL FORMULARIO SEPARAR LOS CARACERES
+/*  const valorInput = e.target.value;
+  iNumber.value = valorInput
+    .replace(/\D/g,"")
+    .replace(/([0-9]{4})/g,' $1'); //CUIDADO CON EL ESPACIO SIGNO PESO. */
 })
 iMonth.addEventListener("input",() => {
   cardMonth.innerText = iMonth.value;
+
 })
 iYear.addEventListener("input",() => {
   cardYear.innerText = iYear.value;
@@ -30,6 +38,7 @@ iCvc.addEventListener("input",() => {
   cardCvc.innerText = iCvc.value;
 })
 console.log(validator);
+
 
 const confirm = document.getElementById("confirm");
 confirm.addEventListener("click", inputNumber)
@@ -40,12 +49,13 @@ function inputNumber() {
   console.log(value)
   //LLAMDO FUNCION ISVALID
   console.log(validator.isValid(value));
-  window.alert(validator.isValid(value));
+  //window.alert(validator.isValid(value));
 
   //LLAMDO FUNCION MASKIFY
   console.log(validator.maskify(value));
   console.log(validator.enty(value))
   //window.alert(validator.enty(value));
+  // document.write(validator.maskify(value));
 
 
 }
@@ -63,7 +73,7 @@ document.getElementById("confirm").addEventListener("click", () => {
 
 
 
-
+ 
 
   //SE HACE EL LLAMADO DE LA FUNCION ISVALID
   const valid = validator.isValid(inputNumber);
@@ -93,10 +103,16 @@ document.getElementById("confirm").addEventListener("click", () => {
   document.getElementById("inputNumber").value = acumulador;
   //ENMASCARAMIENTO DEL NUMERO
 
-  console.log(acumulador);
+  //console.log((inputNumber).slice(-4));
+  //console.log(acumulador);
+  //return acumulador;
+  
 
 
-
+  const respuesta =document.getElementById("respuesta");
+  //respuesta.innerText='Hola '+inputName+' su tarjeta es '+valid+' corresponde a la entidad bancaria '+validator.enty(inputNumber);
+  respuesta.innerText='Hola '+inputName+' su tarjeta corresponde a la entidad bancaria '+validator.enty(inputNumber);
+  
 }
 
 

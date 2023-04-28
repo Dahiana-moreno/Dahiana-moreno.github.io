@@ -13,12 +13,12 @@
 
  <main class="princi">
   <div class="card">
-  <div class="cardFront">
+  <div class="cardFront" id="tarjeta">
       <img src="cardfront.png" alt="frente tarjeta">
       <div class="cardfront_data">
-        <p class="card-number" id="card-number">0000 0000 0000 0000</p>
+        <p class="card-number" id="card-number">#### #### #### ####</p>
         <div class="card-name-date">
-        <p class="card-name" id="card-name">JAne Brunch</p>
+        <p class="card-name" id="card-name">JAne Brunc</p>
         <p class="card-date"><span id="card-month">00</span>/<span id="card-year">00</span></p>
                   </div>
                 </div>
@@ -45,7 +45,7 @@
 
 <div class="form-group">
   <label for="inputNumber">Número de Tarjeta</label>
-    <input type="number" id="inputNumber" class="input" placeholder="Numero de Tarjeta" maxlength="18" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+    <input type="text" id="inputNumber" class="input" placeholder="Numero de Tarjeta" maxlength="19" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
             </div>  
 <br>
 
@@ -61,15 +61,19 @@
   <label for="inputCvc">CVC</label>
     <input type="text" class="input" id="inputCvc" placeholder="CVC" pattern="\d*" maxlength="4" required>
               </div>
+
 <div class="form-group">
       <button class="button" id="confirm">Confirmar</button>
               </div>
               </div>
               
 </section>
+ 
+<h4 id="respuesta" class="resps"></h4>
     </main>
     <!-- <input type="submit" value="Confirmar" id="btnpay" /> -->
     <script src="index.js" type="module"></script>
   </body>
   <footer>Copyright 2023  All rights reserved</footer>
+
   </html>

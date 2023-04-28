@@ -38,23 +38,25 @@ const validator = {
 
 
   },
-
   maskify: function (creditCardNumber) {
 
     let acumulador = '';
-    const numerator = creditCardNumber.toString().slice(0, -4).replace(/\w/g, "#");
-    // console.log(numerator);
+    const numerator = creditCardNumber.toString().slice(0, -4).replace(/\w/g, '#');
+    
     const security = creditCardNumber.toString().slice(-4);
-    // console.log(security);
+    //console.log(security);
     acumulador = numerator + security;
 
-    console.log(acumulador);
+    //document.write(acumulador);
+
+    //console.log(acumulador);
     return acumulador;
   },
 
   
-  enty: function (creditCardNumber) {
-
+  
+  enty: function(creditCardNumber){
+  
     const entyy = {
       electron: /^(4026|417500|4405|4508|4844|4913|4917)\d+$/,
       maestro: /^(5018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)\d+$/,
@@ -68,18 +70,17 @@ const validator = {
       discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
       jcb: /^(?:2131|1800|35\d{3})\d{11}$/
     }
-
+  
     //PERMITE HACER EL TEST A QUE FRANQUICIA CORRESPONDE
     for (const k in entyy) {
       if (entyy[k].test(creditCardNumber)) {
         return k;
       }
-
     }
-    return null;
+    return "No valida";
 
 
-  }
+  },
 };
 
 
